@@ -1,10 +1,14 @@
-fn borrowing_doesnot_move_ownership() {
-    let word = "UTRGV".to_string();
-    let borrow_word = &word;
-    println!("{} == {}", word, borrow_word);
-}
+use std::process::Command;
 
+fn main(){
+    let output = Command::new("ls")
+    .arg("-1")
+    .arg("my_files")
+    .output() //exec happens here
+    .expect("Failed to execute command");
 
-fn print_string(w:& string){
-    println("{}", w),
+    let _new_file_name =
+
+    println!("Command output: {}",
+    String::from_utf8_lossy(&output.stdout));
 }
